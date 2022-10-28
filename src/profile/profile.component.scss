@@ -1,0 +1,162 @@
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+.bigWidth {
+  width: 80%;
+}
+.marginCenter {
+  display: block;
+  margin-left: auto;
+}
+.tenMargin {
+  margin: 10px;
+}
+.fiftyPxHeight {
+  height: 50px;
+}
+.flexRowResponsive {
+  display: flex;
+  flex-direction: row;
+}
+.flexColumn {
+  flex-direction: column;
+}
+.leftPanel {
+  background-color: white;
+  width: 32%;
+  margin-right: 1%;
+  border-radius: 0 15px 15px 0;
+}
+.center {
+  width: 67%;
+  min-height: 78vh;
+  background-color: white;
+  border-radius: 15px 0 0 15px;
+  background-color: white;
+}
+.profileContainer {
+  height: 100px;
+  width: 100%;
+}
+.profileFlex {
+  display: flex;
+  flex-direction: row;
+}
+.flexRightAuto {
+  margin-left: auto;
+}
+.profileTitle {
+  font-size: 26px;
+  font-weight: bold;
+  padding: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  align-items: flex-end;
+  color:#F68234;
+  line-height: 25px;
+}
+.profileTitleBorder {
+  height: 4px;
+  width: calc(100% - 20px);
+  background-color: #F68234;
+}
+.profileImage {
+  height: 250px;
+  width: 250px;
+  margin: 0 calc(50% - 125px);
+  border: 2px solid #F68234;
+}
+.hashtagList {
+  text-align: center;
+  width: 100%;
+}
+.hashtagFont {
+  padding: 15px;
+  font-weight: bold;
+  font-size: 26px;
+  color: black;
+}
+.addHashtagsBtn {
+  margin: 5px;
+  margin-left: 8em;
+  color: #F68234;
+}
+.hide {
+  visibility: hidden;
+}
+.transformTopSelectBox {
+  transform: translate(100px, -200px);
+}
+.descriptionTitle {
+  padding: 10px;
+  padding-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.descriptionContent {
+  padding: 10px;
+}
+.topPaddingRight {
+  padding-top: 25px;
+}
+
+.profileVideo iframe {
+  margin: 0 auto;
+  display: block;
+}
+.editNameBtn {
+  padding-top: 8px;
+  padding-right: 10px;
+  z-index: 5;
+}
+.editNameForm {
+  height: 50px;
+  padding: 5px;
+  z-index: 5;
+}
+.profileVideoIframe {
+  width: 560px;
+  height: 315px;
+}
+.inputFile {
+  margin: 10px 0 10px 25%;
+}
+.descriptionEditField {
+  margin: 10px;
+  padding: 5px;
+  width: 96%;
+  border: 1px solid black;
+}
+.linkInputWidth {
+  width: 350px;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    margin-top: 11em;
+  }
+  .marginCenter {
+    display: block;
+    margin-left: 0;
+  }
+  .flexRowResponsive {
+    display: block;
+  }
+  .topPaddingRight {
+    padding-top: 0;
+  }
+  .leftPanel {
+    width: 96%;
+    margin: 2%;
+    border-radius: 15px;
+  }
+  .center {
+    width: 96%;
+    margin: 2%;
+    border-radius: 15px;
+  }
+  .profileVideoIframe {
+    width: 230px;
+    height: 150px;
+  }
+}

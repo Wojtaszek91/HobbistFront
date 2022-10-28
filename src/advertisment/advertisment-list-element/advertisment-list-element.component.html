@@ -1,0 +1,65 @@
+<div *ngIf="advertisment as ad" class="advertismentContainer">
+  <div class="flexRow">
+    <div *ngIf="ad.averageMark && ad.averageMark >= 1; else emptyStarOne">
+      <mat-icon class="starHover" (click)="onStarClick(1)">star</mat-icon>
+    </div>
+    <div *ngIf="ad.averageMark && ad.averageMark >= 2; else emptyStarTwo">
+      <mat-icon class="starHover" (click)="onStarClick(2)">star</mat-icon>
+    </div>
+    <div *ngIf="ad.averageMark && ad.averageMark >= 3; else emptyStarThree">
+      <mat-icon class="starHover" (click)="onStarClick(3)">star</mat-icon>
+    </div>
+    <ng-template #emptyStarOne>
+      <mat-icon class="starHover" (click)="onStarClick(1)">star_border</mat-icon>
+    </ng-template>
+    <ng-template #emptyStarTwo>
+      <mat-icon class="starHover" (click)="onStarClick(2)">star_border</mat-icon>
+    </ng-template>
+    <ng-template #emptyStarThree>
+      <mat-icon class="starHover" (click)="onStarClick(3)">star_border</mat-icon>
+    </ng-template>
+    <div class="moveToRight">
+      Wyświetlenia: {{ad.postViews}}
+    </div>
+    <br />
+  </div>
+  <div class="flexRowResponsive">
+    <div class="descriptionField">
+      {{ad.postMessage}}
+    </div>
+    <div class="mapField">
+      <iframe [src]="mapSrc" class="iFrameSize borderMapAccent"></iframe>
+    </div>
+  </div>
+  <div class="flexRow">
+    <div class="profileLink" (click)="onProfileClick()">
+      {{profileName}}
+    </div>
+    <div class="moveToRight" *ngIf="isAuthor">
+      <button class="btnMargin" matTooltip="Edytuj" matTooltipPosition=below mat-mini-fab (click)="onEditClick()"
+        color="primary">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+    <div class="moreToRight" *ngIf="!isAuthor">
+      <button class="btnMargin" matTooltip="Napisz wiadomość" matTooltipPosition=below mat-mini-fab
+        (click)="onEditClick()" color="primary">
+        <mat-icon> message</mat-icon>
+      </button>
+    </div>
+    <div *ngIf="!isAdmin">
+      <ng-container *ngIf="ad.isBlocked; else blockBtn">
+        <button matTooltip="Odblokuj" matTooltipPosition=below class="btnMargin" mat-mini-fab (click)="onUnblockClick()"
+          color="accent">
+          <mat-icon>undo</mat-icon>
+        </button>
+      </ng-container>
+      <ng-template #blockBtn>
+        <button matTooltip="Zablokuj" matTooltipPosition=below class="btnMargin" mat-mini-fab (click)="onBlockClick()"
+          color="accent">
+          <mat-icon>block</mat-icon>
+        </button>
+      </ng-template>
+    </div>
+  </div>
+</div>

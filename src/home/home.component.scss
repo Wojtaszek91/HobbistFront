@@ -1,0 +1,28 @@
+.textBox {
+  width: 360px;
+  height: 75%;
+  margin-left: calc(50% - 180px);
+  margin-top: 15%;
+  border-radius: 25px;
+  box-shadow: 0 0 1em black;
+  background-color: white;
+  text-align: center;
+}
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+}
+.welcomeBtn {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+.titleBox {
+  padding: 25px 0;
+}
+.subtextBox {
+  padding: 10px;
+}
+.container {
+min-height: 250px;
+}

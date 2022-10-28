@@ -1,0 +1,97 @@
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+.flexScreen {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+.leftSideBlock {
+  width: 30%;
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 20px;
+  z-index: 5;
+  height: 100%;
+}
+.rightSideBlock {
+  width: 70%;
+}
+.searchRow {
+  width: 500px;
+  margin-left: 15px;
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+}
+.fullWidth {
+  width: 100%;
+}
+.addPostTitle {
+  font-weight: 700;
+    font-size: 26px;
+    color: #da670e;
+    line-height: 2em;
+}
+  .flexRowSide {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .leftAuto {
+    margin-left: auto;
+  }
+  .searchFormField {
+    margin-top: 20px;
+    width: 80%;
+    z-index: 5;
+  }
+  .advertismentsContainer {
+    min-height: 60%;
+    width: 99%;
+    margin-left: 15px;
+}
+.hashtagBtn {
+  margin: 10px;
+}
+.daysSelect {
+  width: 100px;
+    margin-left: 10px;
+}
+.advertismentsContainer {
+  margin: 0 10px;
+  width: calc(100% - 40px);
+}
+.editedBlock {
+  border: 2px solid #009ff5;
+}
+
+@media only screen and (max-width: 600px) {
+  .flexScreen {
+    display: flex;
+    flex-direction: column;
+  }
+  .leftSideBlock {
+    margin-top: 60px;
+    width: calc(85% - 10px);
+    margin-left: 5px;
+  }
+  .rightSideBlock {
+    width: 85%;
+    margin-left: 1%;
+  }
+  .searchRow {
+    width: 100%;
+    margin-left: 10%;
+  }
+  .advertismentsContainer {
+    margin-left: 0;
+    width: 112%;
+  }
+}
+
+
+

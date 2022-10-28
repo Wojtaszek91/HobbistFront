@@ -1,0 +1,19 @@
+.header {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.logoContainer {
+  margin-left: auto;
+}
+.marginRight {
+  margin-right: auto;
+}
+.paddingTop {
+  padding-top: 10%;
+}

@@ -1,0 +1,97 @@
+<app-header></app-header>
+<div class="container">
+  <div class="flexRowResponsive">
+    <div class="leftPanel flexColumn">
+      <div class="profileContainer">
+        <div class="profileFlex">
+          <div class="flexRightAuto"></div>
+          <div class="profileTitle" *ngIf="!isNameEdit;else nameInput">
+            {{name ?? ''}}
+          </div>
+          <ng-template #nameInput>
+            <mat-form-field appearance="fill" class="editNameForm" color="primary">
+              <mat-label>Imię i Nazwisko</mat-label>
+              <input matInput [formControl]="nameForm" type="text" required />
+            </mat-form-field>
+          </ng-template>
+          <ng-container *ngIf="isOwner">
+            <div class="editNameBtn" *ngIf="!isNameEdit;else nameEditCheck">
+              <button mat-mini-fab color="primary" (click)="onEditNameClick()">
+                <mat-icon>note_add</mat-icon>
+              </button>
+            </div>
+          </ng-container>
+          <ng-template #nameEditCheck>
+            <div class="editNameBtn">
+              <button mat-mini-fab color="primary" (click)="onEditNameClick()">
+                <mat-icon>check_circle</mat-icon>
+              </button>
+            </div>
+          </ng-template>
+        </div>
+        <div class="profileTitleBorder"></div>
+      </div>
+      <div class="profileImage">
+        <img [src]="photo ?? ''" alt="profileImage" width="250" height="250" />
+      </div>
+      <ng-container *ngIf="isOwner">
+        <input class="inputFile" type="file" [formControl]="imageForm" required #imageFile
+          (change)="onImageInputChange($event)" />
+        <button mat-raised-button class="addHashtagsBtn" (click)="openHashtagList()">Dodaj Hashtagi</button>
+      </ng-container>
+      <div class="hashtagList">
+        <div class="hashtagFont" *ngFor="let hashtag of userHashtags">
+          #{{hashtag}}
+        </div>
+      </div>
+      <mat-form-field appearance="fill" class="hide transformTopSelectBox">
+        <mat-label>Hashtags</mat-label>
+        <mat-select [formControl]="hashtagsForm" #hashtags multiple (openedChange)="onSelectHashtagsChange($event)">
+          <mat-option *ngFor="let hashtag of hashtags$ | async" [value]="hashtag">{{hashtag}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="center flexColumn topPaddingRight">
+      <div class="flexRow">
+        <div class="descriptionTitle">O MNIE:</div>
+        <ng-container *ngIf="isOwner">
+          <div class="editNameBtn" *ngIf="!isDescriptionEdit;else descriptionEditCheck">
+            <button mat-mini-fab color="primary" (click)="onEditDescriptionClick()">
+              <mat-icon>note_add</mat-icon>
+            </button>
+          </div>
+        </ng-container>
+        <ng-template #descriptionEditCheck>
+          <div class="editNameBtn">
+            <button mat-mini-fab color="primary" (click)="onEditDescriptionClick()">
+              <mat-icon>check_circle</mat-icon>
+            </button>
+          </div>
+        </ng-template>
+      </div>
+      <div class="descriptionContent" *ngIf="!isDescriptionEdit;else descriptionInput">{{description ?? ''}}</div>
+      <ng-template #descriptionInput>
+        <textarea class="descriptionEditField" matInput [formControl]="descriptionForm" type="text" rows=6
+          required></textarea>
+      </ng-template>
+      <div class="profileVideo topPaddingRight bordered">
+        <iframe class="profileVideoIframe" [src]="youtubeUrl ?? ''" alt="Link to Youtube video"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        <ng-container *ngIf="isOwner">
+          <div class="flexRow bigWidth marginCenter">
+            <mat-form-field appearance="fill" color="primary" class="tenMargin fiftyPxHeight linkInputWidth">
+              <mat-label for="urlInput">Zmień link do prezentacji: </mat-label>
+              <input matInput type="url" [formControl]="youtubeURLForm" />
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="fiftyPxHeight" (click)="onConfirmYoutubeClick()">
+              Potwierdź Link
+            </button>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

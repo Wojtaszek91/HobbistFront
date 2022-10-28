@@ -1,0 +1,27 @@
+.headerContainer {
+  height: 50px;
+  width: 98.5vw;
+  position: absolute;
+  z-index: 2;
+  top: 85px;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 10px;
+}
+.headerIconContainer {
+  margin: 10px;
+}
+.clear {
+    color: black;
+    text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+@media only screen and (min-width: 600px) {
+  .headerContainer {
+    top: 120px;
+  }
+}

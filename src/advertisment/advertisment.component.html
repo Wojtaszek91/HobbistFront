@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="container">
+  <div class="flexScreen">
+    <div class="leftSideBlock" [ngClass]="isEdited ? 'leftSideBlock editedBlock' : 'leftSideBlock'">
+      <span class="addPostTitle">Dodaj Post</span>
+      <mat-form-field class="fullWidth" appearance="fill">
+        <mat-label>Opis</mat-label>
+        <textarea matInput [formControl]="descriptionForm" #description multiple rows=6></textarea>
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill" class="fullWidth">
+        <mat-label>Hashtag</mat-label>
+        <mat-select [formControl]="hashtagsForm" #hashtags>
+          <mat-option *ngFor="let hashtag of hashtags$ | async" [value]="hashtag">{{hashtag}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label for="startDate">Data rozpoczecia</mat-label>
+        <input type="datetime-local" matInput [formControl]="startDateForm">
+      </mat-form-field>
+      <mat-form-field class="daysSelect">
+        <mat-label>Ile dni trwa?</mat-label>
+        <input type="number" matInput placeholder=1 min=1 max=5 [formControl]="lastForm">
+      </mat-form-field>
+      <br />
+      <app-map-container [selectedPosition]="selectedPosition" (locationChanged)="onLocationChange($event)"
+        [events]="eventSubject.asObservable()">
+      </app-map-container>
+      <br />
+      <div class="flexRowSide">
+        <div class="leftAuto">
+          <button mat-raised-button color="primary" (click)="sendAdvertisment()">ZAPISZ OGŁOSZENIE</button>
+        </div>
+      </div>
+    </div>
+    <div class="rightSideBlock">
+      <div class="searchRow">
+        <mat-form-field appearance="fill" class="searchFormField">
+          <mat-label for="search">Wybierz interesujący Cię hashtag</mat-label>
+          <mat-select matInput [formControl]="searchForm" #search (selectionChange)="onSearch($event)">
+            <mat-option *ngFor="let hashtag of hashtags$ | async" [value]="hashtag">{{hashtag}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="advertismentsContainer">
+        <app-advertisment-list-element *ngFor="let ad of advertisments$ | async" [advertisment]="ad"
+          (onEditClicked)="onEditClicked($event)">
+        </app-advertisment-list-element>
+      </div>
+    </div>
+  </div>
+  <div>
+  </div>
+  <div>
+  </div>
+</div>
+<app-footer></app-footer>

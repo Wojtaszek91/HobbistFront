@@ -1,0 +1,84 @@
+.flexRowResponsive {
+  display: flex;
+  flex-direction: row;
+}
+.container {
+  margin-top: 200px;
+  background-color: white;
+  padding: 10px;
+  width: 97%;
+  margin-left: 1%;
+  border-radius: 25px;
+}
+.messagesContainer {
+  width: calc(100% - 50px);
+  margin:20px;
+}
+.conversationsContainer {
+  width: 46px;
+  padding-left: 10px;
+  margin-right: 10px;
+  border-left: 2px solid lightslategray;;
+}
+
+.userIcon {
+  font-size: 26px;
+  font-weight: bold;
+}
+.conversationBtnContainer {
+    border-radius: 31px;
+    margin-bottom: 10px;
+    border: 3px solid transparent;
+}
+.selected {
+  border: 3px solid darkorange;
+}
+.receiverMessage {
+  border-radius: 25px;
+  margin-left: 10px;
+  margin-right: auto;
+  width: 50%;
+  background-color: lightblue;
+}
+.senderMessage {
+  border-radius: 25px;
+  margin-right: 10px;
+  margin-left: auto;
+  width: 50%;
+  background-color: #f4d1b7;
+}
+.newMessageInput {
+  width: 50%;
+  margin:20px;
+  margin-left: calc(50% - 20px);
+}
+.desktopScreen {
+  display: block;
+}
+.mobileScreen {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  .flexRowResponsive {
+    flex-direction: column-reverse;
+  }
+  .newMessageInput {
+    width: calc(100% - 20px);
+    margin-left: 10px;
+  }
+  .desktopScreen {
+  display: none;
+}
+  .mobileScreen {
+    display: block;
+  }
+  .container {
+    width: 93%;
+  }
+  .conversationsContainer {
+    border: none;
+  }
+  .messagesContainer {
+    width: 100%;
+  }
+}

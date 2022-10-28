@@ -1,0 +1,44 @@
+.inputWindow {
+    width: 320px;
+    height: 500px;
+    margin-left: calc(50vw - 160px); ///mob
+    margin-top: calc(50vh - 250px);
+    border-radius: 25px;
+    box-shadow: 0 0 1em black;
+    background-color: white;
+}
+.formContainer {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginContainer, .passwordContainer {
+    width: 75%;
+}
+button {
+    margin-bottom: 10px;
+}
+.btnContainer {
+    margin-top: 15px;
+}
+
+.textRed {
+    color: red;
+    font-size: 14px;
+}
+
+.textGreen {
+    color: green;
+    font-size: 14px;
+}
+
+@media only screen and (min-width: 600px) {
+    .inputWindow {
+        width: 500px;
+        margin-left: calc(50vw - 250px);
+    }
+    .logoContainer {
+        padding-left: 150px;
+    }
+}

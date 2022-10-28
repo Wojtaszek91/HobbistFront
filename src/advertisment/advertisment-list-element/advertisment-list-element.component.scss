@@ -1,0 +1,71 @@
+.advertismentContainer {
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.flexRowResponsive {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.starHover {
+  color: #da670e;
+  cursor: pointer;
+}
+.starHover:hover {
+  color: #009ff5;
+}
+.moveToRight {
+  margin-left: auto;
+}
+.descriptionField {
+  font-size: 16px;
+}
+.descriptionField {
+  width: calc(100% - 410px);
+}
+.borderMapAccent {
+  border: 2px solid #009ff5;
+}
+.btnMargin {
+  margin: 5px;
+}
+.profileLink {
+  color: black;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 50px;
+}
+.profileLink:hover {
+  color: #009ff5;
+}
+.iFrameSize {
+  width: 400px;
+  height: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+  .flexRowResponsive {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .descriptionField {
+    width: 100%;
+  }
+  .iFrameSize {
+    width: 330px;
+    margin-left: 10px;
+    height: 350px;
+  }
+  .advertismentContainer {
+    width: 95%;
+  }
+}

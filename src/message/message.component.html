@@ -1,0 +1,52 @@
+<app-header></app-header>
+<div class="container flexRowResponsive">
+  <div class="messagesContainer">
+    <div *ngIf="selectedMessageBox !== undefined">
+      <div *ngFor="let message of selectedMessageBox.messageHistory">
+        <div [ngClass]="message.senderName === ownerName ? 'receiverMessage':'senderMessage'" class="messagesContainer">
+          {{message.senderName}}: {{message.content}}
+        </div>
+      </div>
+      <!--if sender profile id === profile id -> jest właścicielem wiadomości-->
+      <!--sender nad tekstem bolded get from message-->
+      <!--TEMP USUNĄĆ JAK NAJSZYBCIEJ-->
+      <mat-form-field appearance="fill" class="newMessageInput" color="primary">
+        <input matInput [formControl]="newMessageForm" autocomplete="off" type="text" />
+        <button color="primary" mat-icon-button matSuffix (click)="onSendMessageClick()"
+          [attr.aria-label]="'Send Message'">
+          <mat-icon>send</mat-icon>
+        </button>
+      </mat-form-field>
+      <!--NOWA KONWERSACJA
+      PRZYcisk w POST -> rozpocznij konwersację
+      na backendzie tworzy nową konwersację
+      na froncie czekam na id konwersacji
+      jak dostaję id przekierowuje na stronę wiadomości
+      jako parametr opcjonalny id konwersacji
+      on intit szukam konwersacji po id
+      jak znajdę ustawiam ją jako aktualną-->
+    </div>
+  </div>
+  <div class="conversationsContainer">
+    <div class="desktopScreen" *ngFor="let message of messages$ | async"
+      [ngClass]="message === selectedMessageBox ? 'conversationBtnContainer selected' : 'conversationBtnContainer'">
+      <button mat-mini-fab color="accent" [matTooltip]="getMessageBoxUserName(message)" matTooltipPosition=left
+        (click)="onSelectMessageBox(message)">
+        <span class="userIcon">{{getFirstLetter(message)}}</span>
+      </button>
+    </div>
+    <div class="mobileScreen">
+      <mat-form-field>
+        <mat-label>Konwersacja</mat-label>
+        <mat-select matNativeControl (change)="onConversationChange($event)" [formControl]="selectMessageForm"
+          color="accent">
+          <mat-option *ngFor="let message of messages$ | async" [value]="message">
+            {{message.profileOneId}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+</div>
+<app-footer></app-footer>

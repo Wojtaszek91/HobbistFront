@@ -1,0 +1,29 @@
+@media only screen and (max-width: 600px) {
+  .container {
+    margin-top: 5em;
+  }
+}
+
+.hashtagsContainer {
+  width: calc(100% - 20px);
+  min-height: 100px;
+  background-color: white;
+  border-radius: 15px;
+  margin: 0 10px;
+  transform: translateY(90px);
+  margin-bottom: 100px;
+}
+.hashtag-chip-list {
+  margin: 10px 15px 0 15px;
+  width: calc(100% - 30px);
+}
+.blockedAdvertismentContainer {
+  width: calc(100% - 20px);
+    margin: 10px;
+}
+.advertismentsContainer {
+  margin-left: 0;
+  width: 100%;
+}
+
+

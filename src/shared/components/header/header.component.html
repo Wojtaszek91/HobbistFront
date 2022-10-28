@@ -1,0 +1,39 @@
+<div class="headerContainer">
+  <ul class="flexRow">
+    <li class="headerIconContainer">
+      <a routerLink="/" class="clear">
+        <button matTooltip="Wyloguj" matTooltipPosition=below color="primary" mat-mini-fab (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+      </a>
+    </li>
+    <li class="headerIconContainer">
+      <a routerLink="/admin" class="clear">
+        <button color="primary" matTooltip="Panel Administratora" matTooltipPosition=below mat-mini-fab>
+          <mat-icon> table_chart</mat-icon>
+        </button>
+      </a>
+    </li>
+    <li class="headerIconContainer">
+      <a routerLink="/messages" class="clear">
+        <button matTooltip="Wiadomości" matTooltipPosition=below color="primary" mat-mini-fab>
+          <mat-icon> chat</mat-icon>
+        </button>
+      </a>
+    </li>
+    <li class="headerIconContainer">
+      <a routerLink="/advertisment" class="clear">
+        <button matTooltip="Ogłoszenia" matTooltipPosition=below color="primary" mat-mini-fab>
+          <mat-icon>how_to_vote</mat-icon>
+        </button>
+      </a>
+    </li>
+    <li class="headerIconContainer">
+      <a routerLink="/profile" class="clear">
+        <button matTooltip="Profil" matTooltipPosition=below color="primary" mat-mini-fab (click)="redirectToProfile()">
+          <mat-icon>person</mat-icon>
+        </button>
+      </a>
+    </li>
+  </ul>
+</div>

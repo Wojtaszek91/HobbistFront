@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="container">
+  <div class="hashtagsContainer">
+    <mat-form-field class="hashtag-chip-list" appearance="fill">
+      <mat-label>Hashtagi</mat-label>
+      <mat-chip-list #chipList aria-label="Hashtag selection">
+        <mat-chip *ngFor="let hashtag of hashtags$ | async">
+          <!-- (removed)="onRemoveHashtagClick(hashtag)" -->
+          {{hashtag}}
+          <button matChipRemove>
+            <!--<mat-icon>cancel</mat-icon>-->
+          </button>
+        </mat-chip>
+        <input placeholder="Nowy hashtag..." [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+          (change)="onAddHashtagClick($event)">
+      </mat-chip-list>
+    </mat-form-field>
+  </div>
+  <div *ngFor="let advertisment of advertisments$ | async" class="blockedAdvertismentContainer">
+    <app-advertisment-list-element [advertisment]="advertisment">
+    </app-advertisment-list-element>
+  </div>
+</div>
+<app-footer></app-footer>
