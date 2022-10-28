@@ -1,3 +1,6 @@
+
+![HobbistFrontend](https://user-images.githubusercontent.com/57487655/198681913-924a8fd5-01de-4e40-b3a4-ed9dcb2c7fab.png)
+
 # Association
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
