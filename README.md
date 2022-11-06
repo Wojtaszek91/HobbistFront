@@ -27,7 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
-General flow of communication between components.
+## General flow of communication between components.
 
 Login component:
 ![HobbistFrontend](https://user-images.githubusercontent.com/57487655/198681913-924a8fd5-01de-4e40-b3a4-ed9dcb2c7fab.png)
