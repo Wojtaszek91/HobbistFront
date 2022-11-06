@@ -1,18 +1,3 @@
-General flow of communication between components.
-
-Login component:
-![HobbistFrontend](https://user-images.githubusercontent.com/57487655/198681913-924a8fd5-01de-4e40-b3a4-ed9dcb2c7fab.png)
-Profile componenet:
-![Profile frontend](https://user-images.githubusercontent.com/57487655/198682055-94a6f31b-26ad-40a2-aa5e-6f2980eda71f.png)
-Advertisment component:
-![advertisment frontend](https://user-images.githubusercontent.com/57487655/198682114-24f40efa-76e9-4830-8022-8185aef4f683.png)
-Advertisment-List component:
-![advertisment list frontend](https://user-images.githubusercontent.com/57487655/198682250-e61035fc-beb9-44f1-aeca-37e9669181ef.png)
-Admin component:
-![Admin frontend](https://user-images.githubusercontent.com/57487655/198682329-d6bede5e-ad1d-42d4-967c-2c388540f552.png)
-Communication component:
-![communication frontend](https://user-images.githubusercontent.com/57487655/198682461-6fabc054-5f2b-4320-812c-0a83541b8069.png)
-
 # Association
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
@@ -40,3 +25,20 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+General flow of communication between components.
+
+Login component:
+![HobbistFrontend](https://user-images.githubusercontent.com/57487655/198681913-924a8fd5-01de-4e40-b3a4-ed9dcb2c7fab.png)
+Profile componenet:
+![Profile frontend](https://user-images.githubusercontent.com/57487655/198682055-94a6f31b-26ad-40a2-aa5e-6f2980eda71f.png)
+Advertisment component:
+![advertisment frontend](https://user-images.githubusercontent.com/57487655/198682114-24f40efa-76e9-4830-8022-8185aef4f683.png)
+Advertisment-List component:
+![advertisment list frontend](https://user-images.githubusercontent.com/57487655/198682250-e61035fc-beb9-44f1-aeca-37e9669181ef.png)
+Admin component:
+![Admin frontend](https://user-images.githubusercontent.com/57487655/198682329-d6bede5e-ad1d-42d4-967c-2c388540f552.png)
+Communication component:
+![communication frontend](https://user-images.githubusercontent.com/57487655/198682461-6fabc054-5f2b-4320-812c-0a83541b8069.png)
+
